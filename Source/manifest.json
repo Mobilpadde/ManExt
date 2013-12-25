@@ -6,6 +6,9 @@
 	"version": "1.0",
 
 	"author": "Mads Cordes",
+	"icons": {
+		"128": "assets/img/icon_128.png"
+	},
 
 	"permissions": [
 		"management",

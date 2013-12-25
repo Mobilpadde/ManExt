@@ -23,6 +23,7 @@ function isEmpty(obj) {
 
 refreshGroups = function(){
 	$("#groups ul").html("");
+	$("#form").hide();
 	chrome.storage.sync.get("groups", function(data){
 		for(var i = 0; i < data.groups.length; i++){
 			$("<li>"+data.groups[i]+"</li>").addClass("info").appendTo("#groups ul");
@@ -175,6 +176,7 @@ $(document).ready(function(){
 							chrome.storage.sync.set({"groups": data.groups});
 							refreshGroups();
 							$("#form").hide();
+							$("#nameNew").val("")
 						})
 					}
 				})/*

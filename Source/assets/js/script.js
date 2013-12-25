@@ -154,109 +154,110 @@ $(document).ready(function(){
 			if(isEmpty(data.groups)){
 				chrome.storage.sync.set({"groups":["Stuff"]});
 			}
-			console.log(data.groups);
-		})
-		refreshGroups();
-		refreshExts();
-		//$("#enable").hide();
-		$("#form").hide();
-		$("#delete").hide();
-		$("#info").hide();
+			
+			refreshGroups();
+			refreshExts();
+			//$("#enable").hide();
+			$("#form").hide();
+			$("#delete").hide();
+			$("#info").hide();
 
-		$("#new").click(function(){
-			//var p = prompt("Please specify a name for your shiny new group.");
+			$("#new").click(function(){
+				//var p = prompt("Please specify a name for your shiny new group.");
 
-			//if(p){
-			$("#form").show().keyup(function(e){
-				if(e.keyCode == 13){
-					chrome.storage.sync.get("groups", function(data){
-						data.groups.push($("#nameNew").val());
-						chrome.storage.sync.set({"groups": data.groups});
-						refreshGroups();
-						$("#form").hide();
-					})
-				}
-			})/*
-				chrome.storage.sync.get("groups", function(data){
-					data.groups.push(p);
-					chrome.storage.sync.set({"groups": data.groups});
-					refreshGroups();
-				})*/
-			//}
-		})
-
-		$("#delete").click(function(){
-			//var c = confirm("Are you sure you want to delete this group? This cannot be undone...");
-			//if(c){
-				chrome.storage.sync.get("groups", function(data){
-					for(var i = 0; i < data.groups.length; i++){
-						if($($("#groups .selected")[0]).text() == data.groups[i]){
-							$("#groups .selected").click();
-							data.groups.splice(i, 1);
+				//if(p){
+				$("#form").show().keyup(function(e){
+					if(e.keyCode == 13){
+						chrome.storage.sync.get("groups", function(data){
+							data.groups.push($("#nameNew").val());
 							chrome.storage.sync.set({"groups": data.groups});
 							refreshGroups();
-							refreshExts();
+							$("#form").hide();
+						})
+					}
+				})/*
+					chrome.storage.sync.get("groups", function(data){
+						data.groups.push(p);
+						chrome.storage.sync.set({"groups": data.groups});
+						refreshGroups();
+					})*/
+				//}
+			})
+
+			$("#delete").click(function(){
+				//var c = confirm("Are you sure you want to delete this group? This cannot be undone...");
+				//if(c){
+					chrome.storage.sync.get("groups", function(data){
+						for(var i = 0; i < data.groups.length; i++){
+							if($($("#groups .selected")[0]).text() == data.groups[i]){
+								$("#groups .selected").click();
+								data.groups.splice(i, 1);
+								chrome.storage.sync.set({"groups": data.groups});
+								refreshGroups();
+								refreshExts();
+							}
 						}
-					}
-				})
-			//}
-		})
+					})
+				//}
+			})
 
-		$("#enable").click(function(){
-			var i = 0;
-			enable = function(i){
-				var e = $($("#extensions .selected")[i]);
-				chrome.management.setEnabled(e.attr("data-id"), true, function(){
-					e.removeClass("disabled");
-					i++;
-					if(i < $("#extensions .selected").length){
-						enable(i);
-					}
-				})
-			}
-			enable(i);
-		})
+			$("#enable").click(function(){
+				var i = 0;
+				enable = function(i){
+					var e = $($("#extensions .selected")[i]);
+					chrome.management.setEnabled(e.attr("data-id"), true, function(){
+						e.removeClass("disabled");
+						i++;
+						if(i < $("#extensions .selected").length){
+							enable(i);
+						}
+					})
+				}
+				enable(i);
+			})
 
-		$("#disable").click(function(){
-			var i = 0;
-			disable = function(i){
-				var e = $($("#extensions .selected")[i]);
-				chrome.management.setEnabled(e.attr("data-id"), false, function(){
-					e.addClass("disabled");
-					i++;
-					if(i < $("#extensions .selected").length){
-						disable(i);
-					}
-				})
-			}
-			disable(i);
-		})
+			$("#disable").click(function(){
+				var i = 0;
+				disable = function(i){
+					var e = $($("#extensions .selected")[i]);
+					chrome.management.setEnabled(e.attr("data-id"), false, function(){
+						e.addClass("disabled");
+						i++;
+						if(i < $("#extensions .selected").length){
+							disable(i);
+						}
+					})
+				}
+				disable(i);
+			})
 
-		$("#info").click(function(){
-			var i = 0;
-			openTab = function(i){
-				var e = $($("#extensions .selected")[i]);
-				chrome.tabs.create({"url": exts[e.attr("data-id")].homepageUrl}, function(){
-					i++;
-					if(i < $("#extensions .selected").length){
-						openTab(i);
-					}
-				})
-			}
-			openTab(i);
-		})
+			$("#info").click(function(){
+				var i = 0;
+				openTab = function(i){
+					var e = $($("#extensions .selected")[i]);
+					chrome.tabs.create({"url": exts[e.attr("data-id")].homepageUrl}, function(){
+						i++;
+						if(i < $("#extensions .selected").length){
+							openTab(i);
+						}
+					})
+				}
+				openTab(i);
+			})
 
-		$("#uninstall").click(function(){
-			var i = 0;
-			uninstall = function(i){
-				var e = $($("#extensions .selected")[i]);
-				chrome.management.uninstall({"showConfirmDialog": true}, function(){
-					i++;
-					if(i < $("#extensions .selected").length){
-						uninstall(i);
-					}
-				})
-			}
+			$("#uninstall").click(function(){
+				var i = 0;
+				uninstall = function(i){
+					var e = $($("#extensions .selected")[i]);
+					chrome.management.uninstall({"showConfirmDialog": true}, function(){
+						i++;
+						if(i < $("#extensions .selected").length){
+							uninstall(i);
+						}
+					})
+				}
+			})
+			
 		})
 	})
 })

@@ -131,20 +131,6 @@ refreshExts = function(name){
 			}
 		})
 	}
-
-	/*
-	$("#extensions li").click(function(){
-		if($(this).hasClass("selected")){
-			$(this).removeClass("selected").addClass("unselected");
-		}else{
-			$(this).removeClass("unselected").addClass("selected");
-		}
-		if($("#extensions .selected").length > 0){
-			$("#info").show();
-		}else{
-			$("#info").hide();
-		}
-	})*/
 }
 var exts = new Object(); 
 $(document).ready(function(){
@@ -165,9 +151,10 @@ $(document).ready(function(){
 	
 
 		chrome.storage.sync.get("groups", function(data){
-			if(isEmpty(data)){
+			if(isEmpty(data.groups)){
 				chrome.storage.sync.set({"groups":["Stuff"]});
 			}
+			console.log(data.groups);
 		})
 		refreshGroups();
 		refreshExts();

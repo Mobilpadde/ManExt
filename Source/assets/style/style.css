@@ -1,0 +1,64 @@
+*{ margin:0; padding:0; }
+body{
+	font: 14px/1.2em "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	background: #fff;
+	min-height: 67px;
+	color: #333;
+
+	width: 500px;
+}
+
+.clear{
+	clear: both;
+}
+
+ul li{
+	list-style-type: none;
+}
+
+.bar{
+	background: #eee;
+	width: 490px;
+	margin: 5px;
+}
+.bar ul li{
+	float: left;
+	padding: 5px;
+}
+
+header{
+	background: #fff;
+	min-height: 67px;
+	position: fixed;
+	top: 0px;
+	z-index: 1;
+}
+
+#menu{
+	background: #428bca;
+}
+#menu ul li:last-child{
+	float: right;
+}
+#menu #form #nameNew{
+	border-width: 0px;
+	background: #fff;
+}
+
+#groups{
+	background: #5bc0de;
+}
+
+#extensions{
+	width: 490px;
+	position: relative;
+	top: 67px;
+	z-index: 0;
+}
+#extensions li{
+	width: 100%;
+	padding: 5px;
+}
+#extensions li.unselected:hover{
+	background: #eee;
+}

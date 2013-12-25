@@ -1,0 +1,19 @@
+{
+	"manifest_version": 2,
+
+	"name": "ManExt",
+	"description": "Manage - and group - your installed extensions",
+	"version": "1.0",
+
+	"author": "Mads Cordes",
+
+	"permissions": [
+		"management",
+		"storage",
+		"tabs"
+	],
+	"browser_action": {
+		"default_icon": "assets/img/icon.png",
+		"default_popup": "popup.html"
+	}
+}

@@ -37,11 +37,10 @@ refreshGroups = function(){
 					//if(c){
 						chrome.storage.sync.get($(_this).text(), function(data){
 							for(var i = 0; i < $("#extensions .selected").length; i++){
-								delete data[$($("#extensions .selected")[i]).attr("data-id")];
+								delete data[$(_this).text()][$($("#extensions .selected")[i]).attr("data-id")];
 							}
-							var t = new Object();
-							t[$(_this).text()] = data;
-							chrome.storage.sync.set(t, function(){
+							
+							chrome.storage.sync.set(data, function(){
 								$("#extensions .selected").removeClass("selected");
 								$(_this).click();
 							});
@@ -52,12 +51,15 @@ refreshGroups = function(){
 
 					//if(c){
 						chrome.storage.sync.get($(_this).text(), function(data){
-							for(var i = 0; i < $("#extensions .selected").length; i++){
-								data[$($("#extensions .selected")[i]).attr("data-id")] = $($("#extensions .selected")[i]).text();
+							if(isEmpty(data) || isEmpty(data[$(_this).text()])){
+								data = new Object(); 
+								data[$(_this).text()] = new Object();
 							}
-							var t = new Object();
-							t[$(_this).text()] = data;
-							chrome.storage.sync.set(t, function(){
+							for(var i = 0; i < $("#extensions .selected").length; i++){
+								data[$(_this).text()][$($("#extensions .selected")[i]).attr("data-id")] = $($("#extensions .selected")[i]).text();
+							}
+
+							chrome.storage.sync.set(data, function(){
 								$("#extensions .selected").removeClass("selected");
 								$(_this).click();
 							});
@@ -257,7 +259,7 @@ $(document).ready(function(){
 					})
 				}
 			})
-			
+
 		})
 	})
 })

@@ -24,6 +24,7 @@ function isEmpty(obj) {
 refreshGroups = function(){
 	$("#groups ul").html("");
 	$("#form").hide();
+	$("#info").hide();
 	chrome.storage.local.get("groups", function(data){
 		for(var i = 0; i < data.groups.length; i++){
 			$("<li>"+data.groups[i]+"</li>").addClass("info").appendTo("#groups ul");
@@ -165,31 +166,30 @@ $(document).ready(function(){
 			$("#delete").hide();
 			$("#info").hide();
 
+			// Quite a long work-around, to make it not duplicate groups D:
+			var lastInput = 0;
 			$("#new").click(function(){
 				//var p = prompt("Please specify a name for your shiny new group.");
 
 				//if(p){
-				$("#form").show().keyup(function(e){
-					if(e.keyCode == 13){
-						i = 0;
-						chrome.storage.local.get("groups", function(data){
-							data.groups.push($("#nameNew").val());
-							chrome.storage.local.set({"groups": data.groups}, function(){
-								refreshGroups();
-								$("#form").hide();
-								$("#nameNew").val("");
-								console.log(data, i);
-							});
-							i++;
-						})
-
-					}
-				})/*
-					chrome.storage.local.get("groups", function(data){
-						data.groups.push(p);
-						chrome.storage.local.set({"groups": data.groups});
-						refreshGroups();
-					})*/
+					$("#form").show().keyup(function(e){
+						if(e.keyCode == 13 && $("#nameNew").val() != "" && !/^\s+$/.test($("#nameNew").val())){
+							var d = new Date().getTime();
+							chrome.storage.local.get("groups", function(data){
+								data.groups.push($("#nameNew").val());
+								if(data[data.groups.length - 1] != "" && lastInput != $("#nameNew").val()){
+									//console.log((lastInput != $("#nameNew").val()), lastInput, $("#nameNew").val());
+									lastInput = $("#nameNew").val();
+									chrome.storage.local.set({"groups": data.groups}, function(){
+										refreshGroups();
+										$("#form").hide();
+										$("#nameNew").val("");
+										console.log(data.groups, new Date(new Date().getTime() - d).getTime() + "ms");
+									});
+								}
+							})
+						}
+					})
 				//}
 			})
 
@@ -258,13 +258,15 @@ $(document).ready(function(){
 				var i = 0;
 				uninstall = function(i){
 					var e = $($("#extensions .selected")[i]);
-					chrome.management.uninstall({"showConfirmDialog": true}, function(){
+					chrome.management.uninstall(e.attr("data-id"), {"showConfirmDialog": true}, function(){
 						i++;
+						console.log(e.attr("data-id"));
 						if(i < $("#extensions .selected").length){
 							uninstall(i);
 						}
 					})
 				}
+				uninstall(i);
 			})
 
 		})

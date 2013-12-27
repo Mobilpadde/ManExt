@@ -4,7 +4,7 @@
 	"name": "ManExt",
 	"short_name": "M.E.",
 	"description": "Manage - and group - your installed extensions",
-	"version": "1.2",
+	"version": "1.3",
 
 	"author": "Mads Cordes",
 	"icons": {

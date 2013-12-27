@@ -24,7 +24,7 @@ function isEmpty(obj) {
 refreshGroups = function(){
 	$("#groups ul").html("");
 	$("#form").hide();
-	chrome.storage.sync.get("groups", function(data){
+	chrome.storage.local.get("groups", function(data){
 		for(var i = 0; i < data.groups.length; i++){
 			$("<li>"+data.groups[i]+"</li>").addClass("info").appendTo("#groups ul");
 		}
@@ -36,12 +36,12 @@ refreshGroups = function(){
 					//var c = confirm("Are you sure you want to remove " + ($("#extensions .selected").length > 1 ? "these extensions" : "this extension") + " from " + $(this).text() + "?");
 
 					//if(c){
-						chrome.storage.sync.get($(_this).text(), function(data){
+						chrome.storage.local.get($(_this).text(), function(data){
 							for(var i = 0; i < $("#extensions .selected").length; i++){
 								delete data[$(_this).text()][$($("#extensions .selected")[i]).attr("data-id")];
 							}
 							
-							chrome.storage.sync.set(data, function(){
+							chrome.storage.local.set(data, function(){
 								$("#extensions .selected").removeClass("selected");
 								$(_this).click();
 							});
@@ -51,7 +51,7 @@ refreshGroups = function(){
 					//var c = confirm("Are you sure you want to add " + ($("#extensions .selected").length > 1 ? "these extensions" : "this extension") + " to " + $(this).text() + "?");
 
 					//if(c){
-						chrome.storage.sync.get($(_this).text(), function(data){
+						chrome.storage.local.get($(_this).text(), function(data){
 							if(isEmpty(data) || isEmpty(data[$(_this).text()])){
 								data = new Object(); 
 								data[$(_this).text()] = new Object();
@@ -60,7 +60,7 @@ refreshGroups = function(){
 								data[$(_this).text()][$($("#extensions .selected")[i]).attr("data-id")] = $($("#extensions .selected")[i]).text();
 							}
 
-							chrome.storage.sync.set(data, function(){
+							chrome.storage.local.set(data, function(){
 								$("#extensions .selected").removeClass("selected");
 								$(_this).click();
 							});
@@ -92,7 +92,7 @@ refreshGroups = function(){
 refreshExts = function(name){
 	$("#extensions").html("");
 	if(name){
-		chrome.storage.sync.get(name, function(data){
+		chrome.storage.local.get(name, function(data){
 			for(var i in data[name]){
 				if(i != name){
 					var ext = $("<li>"+data[name][i]+"</li>").addClass("unselected").attr("data-id", i).appendTo("#extensions");
@@ -153,9 +153,9 @@ $(document).ready(function(){
 		console.log(exts);
 	
 
-		chrome.storage.sync.get("groups", function(data){
+		chrome.storage.local.get("groups", function(data){
 			if(isEmpty(data.groups)){
-				chrome.storage.sync.set({"groups":["Stuff"]});
+				chrome.storage.local.set({"groups":["Stuff"]});
 			}
 			
 			refreshGroups();
@@ -171,18 +171,23 @@ $(document).ready(function(){
 				//if(p){
 				$("#form").show().keyup(function(e){
 					if(e.keyCode == 13){
-						chrome.storage.sync.get("groups", function(data){
+						i = 0;
+						chrome.storage.local.get("groups", function(data){
 							data.groups.push($("#nameNew").val());
-							chrome.storage.sync.set({"groups": data.groups});
-							refreshGroups();
-							$("#form").hide();
-							$("#nameNew").val("")
+							chrome.storage.local.set({"groups": data.groups}, function(){
+								refreshGroups();
+								$("#form").hide();
+								$("#nameNew").val("");
+								console.log(data, i);
+							});
+							i++;
 						})
+
 					}
 				})/*
-					chrome.storage.sync.get("groups", function(data){
+					chrome.storage.local.get("groups", function(data){
 						data.groups.push(p);
-						chrome.storage.sync.set({"groups": data.groups});
+						chrome.storage.local.set({"groups": data.groups});
 						refreshGroups();
 					})*/
 				//}
@@ -191,12 +196,12 @@ $(document).ready(function(){
 			$("#delete").click(function(){
 				//var c = confirm("Are you sure you want to delete this group? This cannot be undone...");
 				//if(c){
-					chrome.storage.sync.get("groups", function(data){
+					chrome.storage.local.get("groups", function(data){
 						for(var i = 0; i < data.groups.length; i++){
 							if($($("#groups .selected")[0]).text() == data.groups[i]){
 								$("#groups .selected").click();
 								data.groups.splice(i, 1);
-								chrome.storage.sync.set({"groups": data.groups});
+								chrome.storage.local.set({"groups": data.groups});
 								refreshGroups();
 								refreshExts();
 							}

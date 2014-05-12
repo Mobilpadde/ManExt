@@ -4,7 +4,7 @@
 	"name": "ManExt",
 	"short_name": "M.E.",
 	"description": "Manage - and group - your installed extensions",
-	"version": "1.3",
+	"version": "1.3.1",
 
 	"author": "Mads Cordes",
 	"icons": {
@@ -16,6 +16,7 @@
 		"storage",
 		"tabs"
 	],
+
 	"browser_action": {
 		"default_icon": "assets/img/icon.png",
 		"default_popup": "popup.html"

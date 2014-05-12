@@ -2,7 +2,7 @@
 body{
 	font: 14px/1.2em "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	background: #fff;
-	min-height: 67px;
+	min-height: 52px;
 	color: #333;
 
 	width: 500px;
@@ -18,8 +18,7 @@ ul li{
 
 .bar{
 	background: #eee;
-	width: 490px;
-	margin: 5px;
+	width: 500px;
 }
 .bar ul li{
 	float: left;
@@ -28,7 +27,7 @@ ul li{
 
 header{
 	background: #fff;
-	min-height: 67px;
+	min-height: 52px;
 	position: fixed;
 	top: 0px;
 	z-index: 1;
@@ -52,7 +51,7 @@ header{
 #extensions{
 	width: 490px;
 	position: relative;
-	top: 67px;
+	top: 52px;
 	z-index: 0;
 }
 #extensions li{

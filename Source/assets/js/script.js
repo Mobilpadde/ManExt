@@ -136,7 +136,7 @@ refreshExts = function(name){
 		})
 	}
 }
-var exts = new Object(); 
+var exts = new Object();
 $(document).ready(function(){
 	/*
 	exts["01"] = "Ext.01"; exts["02"] = "Ext.02";
@@ -145,11 +145,21 @@ $(document).ready(function(){
 	exts["07"] = "Ext.07"; exts["08"] = "Ext.08";
 	exts["09"] = "Ext.09"; exts["10"] = "Ext.10";
 	*/
+
+	var tmpObj = new Object(), 
+		tmpArr = new Array();
+
 	chrome.management.getAll(function(data){
-		data.forEach(function(d, i){
-			if(d.type == "extension"){
-				exts[d.id] = d;
+		data.forEach(function(e, i){
+			if(e.type == "extension"){
+				//exts[e.id] = e;
+				tmpObj[e.name] = e;
+				tmpArr.push(e.name);
 			}
+		})
+		tmpArr.sort();
+		tmpArr.forEach(function(e, i){
+			exts[tmpObj[e].id] = tmpObj[e];
 		})
 		console.log(exts);
 	

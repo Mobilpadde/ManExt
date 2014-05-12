@@ -4,16 +4,72 @@
 		"selected_items":
 		[
 			[
+				"data",
+				"data-id"
+			],
+			[
+				"z-i",
+				"z-index"
+			],
+			[
+				"re",
+				"relative"
+			],
+			[
+				"disa",
+				"disabled"
+			],
+			[
+				"ref",
+				"refreshExts(name)"
+			],
+			[
+				"refre",
+				"refreshGroups()"
+			],
+			[
+				"se",
+				"selected"
+			],
+			[
+				"str",
+				"storage"
+			],
+			[
+				"ex",
+				"exts	{}"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"group",
+				"group	(?)"
+			],
+			[
+				"gr",
+				"group	(?)"
+			],
+			[
+				"spli",
+				"splice(pos, amount)"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
 				"add",
 				"addClass"
 			],
 			[
 				"lo",
 				"localStorage"
-			],
-			[
-				"ex",
-				"exts	(?)"
 			],
 			[
 				"margin",
@@ -66,10 +122,6 @@
 			[
 				"gra",
 				"graph"
-			],
-			[
-				"re",
-				"residences"
 			],
 			[
 				"homela",
@@ -196,10 +248,6 @@
 				"typeof"
 			],
 			[
-				"co",
-				"colours"
-			],
-			[
 				"r",
 				"rules"
 			],
@@ -280,10 +328,6 @@
 				"pckRndmIf"
 			],
 			[
-				"gr",
-				"groupEnd"
-			],
-			[
 				"cha",
 				"changeMind"
 			],
@@ -326,10 +370,6 @@
 			[
 				"y",
 				"y"
-			],
-			[
-				"se",
-				"settings"
 			],
 			[
 				"get",
@@ -474,92 +514,48 @@
 			[
 				"send",
 				"sendResponse"
-			],
-			[
-				"css",
-				"cssText"
-			],
-			[
-				"cou",
-				"countedWords"
-			],
-			[
-				"st",
-				"status"
-			],
-			[
-				"Re",
-				"RegExp"
-			],
-			[
-				"saved",
-				"savedPatterns"
-			],
-			[
-				"LO",
-				"localStorage"
-			],
-			[
-				"sor",
-				"sourceWords"
-			],
-			[
-				"user",
-				"userBlacklistedWords"
-			],
-			[
-				"n",
-				"ntrvl"
-			],
-			[
-				"pr",
-				"prb"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "manifest.json",
+			"file": "Source/manifest.json",
 			"settings":
 			{
-				"buffer_size": 277,
-				"line_ending": "Unix",
-				"name": "manifest.json"
+				"buffer_size": 391,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "popup.html",
+			"file": "Source/popup.html",
 			"settings":
 			{
-				"buffer_size": 1527,
-				"line_ending": "Unix",
-				"name": "popup.html"
+				"buffer_size": 1675,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "assets/style/style.css",
+			"file": "Source/assets/js/script.js",
 			"settings":
 			{
-				"buffer_size": 605,
-				"line_ending": "Unix",
-				"name": "style.css"
+				"buffer_size": 7915,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "assets/js/script.js",
+			"file": "Source/assets/style/style.css",
 			"settings":
 			{
-				"buffer_size": 1260,
-				"line_ending": "Unix",
-				"name": "script.js"
+				"buffer_size": 816,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "zTopia/compile/scss/style.scss",
+			"file": "Source/assets/style/buttons.css",
 			"settings":
 			{
-				"buffer_size": 1721,
+				"buffer_size": 431,
 				"line_ending": "Unix"
 			}
 		}
@@ -567,9 +563,25 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 27.0,
+		"height": 67.0,
 		"selected_items":
 		[
+			[
+				"git puc",
+				"Git: Push Current Branch"
+			],
+			[
+				"git fe",
+				"Git: Fetch"
+			],
+			[
+				"git pu",
+				"Git: Push Current Branch"
+			],
+			[
+				"git",
+				"Git: Push"
+			],
 			[
 				"remove",
 				"Package Control: Remove Package"
@@ -636,8 +648,19 @@
 	},
 	"file_history":
 	[
-		"/Users/Mcordes/javascript/ManExt/assets/js/jquery.min.js",
+		"/Users/Mcordes/javascript/ManExt/Extension/assets/style/buttons.css",
+		"/Users/Mcordes/javascript/ManExt/Extension/assets/style/style.css",
+		"/Users/Mcordes/javascript/ManExt/Extension/assets/js/script.js",
+		"/Users/Mcordes/javascript/ManExt/Extension/popup.html",
+		"/Users/Mcordes/javascript/ManExt/Extension/manifest.json",
+		"/Users/Mcordes/javascript/ManExt/zTopia/xxSim/compile/coffee/map/__x.homeland.coffee",
 		"/Users/Mcordes/javascript/ManExt/assets/style/buttons.css",
+		"/Users/Mcordes/javascript/ManExt/zTopia/compile/scss/style.scss",
+		"/Users/Mcordes/javascript/ManExt/assets/style/style.css",
+		"/Users/Mcordes/javascript/ManExt/assets/js/script.js",
+		"/Users/Mcordes/javascript/ManExt/popup.html",
+		"/Users/Mcordes/javascript/ManExt/manifest.json",
+		"/Users/Mcordes/javascript/ManExt/assets/js/jquery.min.js",
 		"/Users/Mcordes/javascript/ManExt/example/popup.html",
 		"/Users/Mcordes/nodejs/zTopia/views/includes/layout.jade",
 		"/Users/Mcordes/nodejs/zTopia/Survive the Night/public/client.js",
@@ -752,18 +775,7 @@
 		"/Users/Mcordes/nodejs/tlkio-bot/lib/tlkio-client.js",
 		"/Users/Mcordes/nodejs/tlkio-bot/plugins/google.js",
 		"/Users/Mcordes/nodejs/tlkio-bot/plugins/bye.js",
-		"/Users/Mcordes/nodejs/tlkio-bot/plugins/hello.js",
-		"/Users/Mcordes/nodejs/tlkio-bot/plugins/help.js",
-		"/Users/Mcordes/nodejs/tlkio-bot/README.md",
-		"/Applications/Game Dev Tycoon.app/Contents/Resources/app.nw/package.json",
-		"/Applications/Game Dev Tycoon.app/Contents/Resources/app.nw/readme.txt",
-		"/Applications/Game Dev Tycoon.app/Contents/Resources/app.nw/compressed/codeNw.js",
-		"/Users/Mcordes/Library/Application Support/Game Dev Tycoon/Local Storage/file__0.localstorage",
-		"/Users/Mcordes/Library/Application Support/Game Dev Tycoon/Local Storage/file__0.localstorage-journal",
-		"/Users/Mcordes/Downloads/script-5xfb.js",
-		"/Users/Mcordes/Downloads/Netflix Region Tool.bat",
-		"/Applications/MAMP/htdocs/ABB/pages/forside.php",
-		"/Applications/MAMP/htdocs/ABB/functions.php"
+		"/Users/Mcordes/nodejs/tlkio-bot/plugins/hello.js"
 	],
 	"find":
 	{
@@ -774,6 +786,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"script.js",
 			"zombie.coffee",
 			"",
 			"<open folders>",
@@ -791,6 +804,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"sync",
+			"local",
+			"sync",
 			"s.size",
 			"movez",
 			"log",
@@ -915,10 +931,7 @@
 			"main",
 			"main(",
 			"translateOR",
-			"main",
-			"mail",
-			".pull-right",
-			"float: right"
+			"main"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -926,6 +939,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"local",
 			"@size",
 			"color:white; background:black;",
 			"mind.pos.now.step",
@@ -961,23 +975,23 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "manifest.json",
+					"file": "Source/manifest.json",
 					"settings":
 					{
-						"buffer_size": 277,
+						"buffer_size": 391,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								176,
-								176
+								151,
+								151
 							]
 						],
 						"settings":
@@ -989,7 +1003,6 @@
 								"README",
 								"FIXME"
 							],
-							"auto_name": "manifest.json",
 							"bh_regions":
 							[
 								"bh_regex",
@@ -1095,6 +1108,7 @@
 							[
 							],
 							"pyflakes_ignore_import_*": true,
+							"remote_loading": false,
 							"sublimelinter": true,
 							"sublimelinter_delay": 2.0,
 							"sublimelinter_disable":
@@ -1117,7 +1131,9 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1127,18 +1143,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "popup.html",
+					"file": "Source/popup.html",
 					"settings":
 					{
-						"buffer_size": 1527,
+						"buffer_size": 1675,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								765,
-								765
+								602,
+								602
 							]
 						],
 						"settings":
@@ -1150,7 +1166,6 @@
 								"README",
 								"FIXME"
 							],
-							"auto_name": "popup.html",
 							"bh_regions":
 							[
 								"bh_regex",
@@ -1256,6 +1271,7 @@
 							[
 							],
 							"pyflakes_ignore_import_*": true,
+							"remote_loading": false,
 							"sublimelinter": true,
 							"sublimelinter_delay": 2.0,
 							"sublimelinter_disable":
@@ -1278,7 +1294,9 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1288,18 +1306,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "assets/style/style.css",
+					"file": "Source/assets/js/script.js",
 					"settings":
 					{
-						"buffer_size": 605,
+						"buffer_size": 7915,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								577,
-								577
+								7784,
+								7784
 							]
 						],
 						"settings":
@@ -1311,7 +1329,6 @@
 								"README",
 								"FIXME"
 							],
-							"auto_name": "style.css",
 							"bh_regions":
 							[
 								"bh_regex",
@@ -1417,6 +1434,7 @@
 							[
 							],
 							"pyflakes_ignore_import_*": true,
+							"remote_loading": false,
 							"sublimelinter": true,
 							"sublimelinter_delay": 2.0,
 							"sublimelinter_disable":
@@ -1439,9 +1457,11 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage"
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
+						"translation.x": 1.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -1449,18 +1469,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "assets/js/script.js",
+					"file": "Source/assets/style/style.css",
 					"settings":
 					{
-						"buffer_size": 1260,
+						"buffer_size": 816,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								239,
-								239
+								183,
+								183
 							]
 						],
 						"settings":
@@ -1472,7 +1492,6 @@
 								"README",
 								"FIXME"
 							],
-							"auto_name": "script.js",
 							"bh_regions":
 							[
 								"bh_regex",
@@ -1578,6 +1597,7 @@
 							[
 							],
 							"pyflakes_ignore_import_*": true,
+							"remote_loading": false,
 							"sublimelinter": true,
 							"sublimelinter_delay": 2.0,
 							"sublimelinter_disable":
@@ -1600,20 +1620,22 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"synced": false,
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "zTopia/compile/scss/style.scss",
+					"file": "Source/assets/style/buttons.css",
 					"settings":
 					{
-						"buffer_size": 1721,
+						"buffer_size": 431,
 						"regions":
 						{
 						},
@@ -1762,7 +1784,7 @@
 							},
 							"sublimelinter_wrap_find": true,
 							"synced": false,
-							"syntax": "Packages/SASS/Syntaxes/SASS.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -1808,6 +1830,10 @@
 	"output.find_results":
 	{
 		"height": 430.0
+	},
+	"output.git":
+	{
+		"height": 112.0
 	},
 	"output.sftp":
 	{

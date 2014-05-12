@@ -34,3 +34,11 @@
 	text-decoration: line-through;
 	font-style: italic;
 }
+
+.disabled.selected{
+	background: #faa737;
+	color: #fff;
+}
+.disabled.selected:hover{
+	background: #f89409;
+}

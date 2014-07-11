@@ -1,0 +1,52 @@
+.primary{
+	background: #428bca;
+	color: #fff;
+}
+.primary:hover, .primary.shown{
+	background: #3276b9;
+}
+
+.primary2{
+	background: #3276b9;
+	color: #fff;
+}
+.primary2:hover{
+	background: #225180;
+}
+
+.selected{
+	background: #5cb85c;
+	color: #fff;
+}
+.selected:hover{
+	background: #47a447;
+}
+
+.info{
+	background: #5bc0de;
+	color: #fff;
+}
+.info:hover, .info.selected{
+	background: #39b3d7;
+}
+
+.danger{
+	background: #d9534f;
+	color: #fff;
+}
+.danger:hover{
+	background: #d2322d;
+}
+
+.disabled{
+	text-decoration: line-through;
+	font-style: italic;
+}
+
+.disabled.selected{
+	background: #faa737;
+	color: #fff;
+}
+.disabled.selected:hover{
+	background: #f89409;
+}

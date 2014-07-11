@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Popup</title>
+		<link rel="stylesheet" href="assets/style/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/style/buttons.css">
+		<link rel="stylesheet" href="assets/style/style.css">
+	</head>
+	<body>
+		<div id="menu">
+			<ul>
+				<li>
+					<span id="select" class="primary">Select</span>
+				</li>
+				<li>
+					<span id="manage" class="primary">Manage Groups</span>
+				</li>
+				<!--<li>
+					<span id="refresh" class="primary" title="Click here if something fucks up">Refresh</span>
+				</li>-->
+				<li id="webstore">
+					<span class="primary">
+						<i class="fa fa-download"></i>
+					</span>
+				</li>
+			</ul>
+			<ul id="selectExtra">
+				<li class="primary2">
+					<span id="moveTo">Move To</span>
+				</li>
+				<li class="primary2">
+					<span id="uninstall">Uninstall</span>
+				</li>
+				<li class="clear"></li>
+			</ul>
+			<ul id="manageExtra">
+				<li class="primary2">
+					<span id="createGroup">Create Group</span>
+				</li>
+				<li class="primary2">
+					<span id="removeGroup">Remove Group</span>
+				</li>
+			</ul>
+		</div>
+		<ul id="groups"></ul>
+		<div id="overlay"></div>
+		<div id="popup">
+			<div id="moveExtensions">
+				<label for="selectGroup">
+					<span>Select group:</span>
+					<select id="selectGroup"></select>
+				</label>
+				<button id="selectButton">Confirm</button>
+			</div>
+			<div id="uninstallExtensions">
+				<label for="uninstallSelect">
+					<span>Extensions to be uninstalled:</span>
+					<select id="uninstallSelect"></select>
+				</label>
+				<button id="uninstallButton">Confirm</button>
+			</div>
+			<div id="newGroup">
+				<label for="groupNamerText">
+					<span>Name of group:</span>
+					<input type="text" id="groupNamerText">
+				</label>
+				<button id="groupNamerButton">Confirm</button>
+			</div>
+			<div id="deleteGroup">
+				<label for="selectGroupDelete">
+					<span>Select group to delete:</span>
+					<select id="selectGroupDelete"></select>
+				</label>
+				<button id="selectDeleteButton" class="danger">Remove</button>
+			</div>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>

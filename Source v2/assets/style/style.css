@@ -1,0 +1,110 @@
+*{ margin:0; padding:0; }
+ul li{ list-style-type: none; }
+.clear{ clear: both; display: none; }
+
+body{
+	font: 14px/1.2em "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	background: #fff;
+	width: 500px;
+	min-height: 26px;
+	color: #333;
+
+	margin-top: 26px;
+}
+#menu{
+	background: #428bca;
+	width: 500px; height: auto;
+	max-height: 26px;
+	color: #fff;
+	position: fixed;
+	top: 0;
+}
+#menu ul li{
+	display: inline-block;
+}
+#menu ul li span{
+	padding: 5px;
+	display: block;
+}
+#menu ul li#webstore{
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+#menu #selectExtra, #menu #manageExtra{
+	background: #3276b9;
+	display: none;
+}
+#groups, #groups .group{
+	width: 100%;
+}
+#groups .group .groupName{
+	background: #5bc0de;
+	color: #fff;
+	width: 490px; height: auto;
+	padding: 5px;
+	display: block;
+}
+#groups .group .extensions{
+	display: none;
+}
+#groups .group.shown .extensions{
+	display: block;
+}
+#groups .group .extensions .extension{
+	padding: 5px 5px 5px 0;
+	margin-left: -61px;
+	-webkit-transition: margin-left 200ms;
+}
+#groups .group .extensions .extension:hover{
+	background: #eee;
+	color: #000;
+	margin-left: 5px;
+}
+
+#overlay, #popup, #popup #moveExtensions, #popup #newGroup, #popup #deleteGroup, #popup #uninstallExtensions{
+	display: none;
+}
+#overlay{
+	background: rgba(0, 0, 0, .5);
+	position: fixed;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 1;
+}
+#popup{
+	background: #428bca;
+	width: 250px;
+	height: 85px;
+	margin: auto;
+	padding: 10px;
+	position: fixed;
+	top: 0; left: 0; right: 0; bottom: 0;
+	z-index: 2;
+	color: #fff;
+}
+#popup span{
+	margin-bottom: 10px;
+}
+#popup span, #popup label{
+	display: block;
+}
+#popup input, #popup select, #popup button{
+	border: 1px solid #5e5e5e;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+#popup button.danger{
+	background: #d9534f;
+}
+#popup input{
+	width: 238px;
+}
+#popup select{
+	width: 250px;
+}
+#popup button{
+	background: #3276b9;
+	border: none;
+	color: #fff;
+	float: right;
+}

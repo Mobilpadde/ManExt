@@ -34,9 +34,6 @@ refreshGroups = function(){
 			_this = this;
 			if($("#extensions .selected").length > 0){
 				if($(_this).hasClass("selected")){
-					//var c = confirm("Are you sure you want to remove " + ($("#extensions .selected").length > 1 ? "these extensions" : "this extension") + " from " + $(this).text() + "?");
-
-					//if(c){
 						chrome.storage.local.get($(_this).text(), function(data){
 							for(var i = 0; i < $("#extensions .selected").length; i++){
 								delete data[$(_this).text()][$($("#extensions .selected")[i]).attr("data-id")];
@@ -47,11 +44,7 @@ refreshGroups = function(){
 								$(_this).click();
 							});
 						})
-					//}
 				}else{
-					//var c = confirm("Are you sure you want to add " + ($("#extensions .selected").length > 1 ? "these extensions" : "this extension") + " to " + $(this).text() + "?");
-
-					//if(c){
 						chrome.storage.local.get($(_this).text(), function(data){
 							if(isEmpty(data) || isEmpty(data[$(_this).text()])){
 								data = new Object(); 
@@ -66,7 +59,6 @@ refreshGroups = function(){
 								$(_this).click();
 							});
 						})
-					//}
 				}
 			}else{
 				if($("#groups .selected").length == 1){
@@ -94,6 +86,7 @@ refreshExts = function(name){
 	$("#extensions").html("");
 	if(name){
 		chrome.storage.local.get(name, function(data){
+			console.log(data)
 			for(var i in data[name]){
 				if(i != name){
 					var ext = $("<li>"+data[name][i]+"</li>").addClass("unselected").attr("data-id", i).appendTo("#extensions");
@@ -179,45 +172,38 @@ $(document).ready(function(){
 			// Quite a long work-around, to make it not duplicate groups D:
 			var lastInput = 0;
 			$("#new").click(function(){
-				//var p = prompt("Please specify a name for your shiny new group.");
-
-				//if(p){
-					$("#form").show().keyup(function(e){
-						if(e.keyCode == 13 && $("#nameNew").val() != "" && !/^\s+$/.test($("#nameNew").val())){
-							var d = new Date().getTime();
-							chrome.storage.local.get("groups", function(data){
-								data.groups.push($("#nameNew").val());
-								if(data[data.groups.length - 1] != "" && lastInput != $("#nameNew").val()){
-									//console.log((lastInput != $("#nameNew").val()), lastInput, $("#nameNew").val());
-									lastInput = $("#nameNew").val();
-									chrome.storage.local.set({"groups": data.groups}, function(){
-										refreshGroups();
-										$("#form").hide();
-										$("#nameNew").val("");
-										console.log(data.groups, new Date(new Date().getTime() - d).getTime() + "ms");
-									});
-								}
-							})
-						}
-					})
-				//}
+				$("#form").show().keyup(function(e){
+					if(e.keyCode == 13 && $("#nameNew").val() != "" && !/^\s+$/.test($("#nameNew").val())){
+						var d = new Date().getTime();
+						chrome.storage.local.get("groups", function(data){
+							data.groups.push($("#nameNew").val());
+							if(data[data.groups.length - 1] != "" && lastInput != $("#nameNew").val()){
+								//console.log((lastInput != $("#nameNew").val()), lastInput, $("#nameNew").val());
+								lastInput = $("#nameNew").val();
+								chrome.storage.local.set({"groups": data.groups}, function(){
+									refreshGroups();
+									$("#form").hide();
+									$("#nameNew").val("");
+									console.log(data.groups, new Date(new Date().getTime() - d).getTime() + "ms");
+								});
+							}
+						})
+					}
+				})
 			})
 
 			$("#delete").click(function(){
-				//var c = confirm("Are you sure you want to delete this group? This cannot be undone...");
-				//if(c){
-					chrome.storage.local.get("groups", function(data){
-						for(var i = 0; i < data.groups.length; i++){
-							if($($("#groups .selected")[0]).text() == data.groups[i]){
-								$("#groups .selected").click();
-								data.groups.splice(i, 1);
-								chrome.storage.local.set({"groups": data.groups});
-								refreshGroups();
-								refreshExts();
-							}
+				chrome.storage.local.get("groups", function(data){
+					for(var i = 0; i < data.groups.length; i++){
+						if($($("#groups .selected")[0]).text() == data.groups[i]){
+							$("#groups .selected").click();
+							data.groups.splice(i, 1);
+							chrome.storage.local.set({"groups": data.groups});
+							refreshGroups();
+							refreshExts();
 						}
-					})
-				//}
+					}
+				})
 			})
 
 			$("#enable").click(function(){
